@@ -21,5 +21,5 @@ elif [ x$1 == x"4" ];then
 		-m 2048 \
 		-append "console=ttyS0"
 else
-	echo "Hello World"
+	echo "use kvm, 4, 5 para to start..."
 fi
