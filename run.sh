@@ -2,7 +2,7 @@
 if [ x$1 == x"kvm" ];then
 	qemu-system-x86_64 \
 		-s \
-		-kernel ../linux-4.19.108/arch/x86/boot/bzImage \
+		-kernel ../linux-5.4.52/arch/x86/boot/bzImage \
 		-initrd initramfs.cpio.gz \
 		-nographic \
 		-cpu host \
@@ -10,17 +10,17 @@ if [ x$1 == x"kvm" ];then
 		-smp 2 \
 		-m 2048 \
 		-append "console=ttyS0"
-elif [ x$1 == x"4" ];then
+elif [ x$1 == x"5" ];then
 	qemu-system-x86_64 \
 		-s \
-		-kernel ../linux-4.19.108/arch/x86/boot/bzImage \
+		-kernel ../linux-5.4.52/arch/x86/boot/bzImage \
 		-initrd initramfs.cpio.gz \
 		-nographic \
 		-cpu max \
 		-smp 2 \
 		-m 2048 \
 		-append "console=ttyS0"
-elif [ x$1 == x"5" ];then
+elif [ x$1 == x"trunk" ];then
 	qemu-system-x86_64 \
 		-s \
 		-kernel ../linux_trunk/arch/x86/boot/bzImage \
@@ -31,5 +31,5 @@ elif [ x$1 == x"5" ];then
 		-m 2048 \
 		-append "console=ttyS0"
 else
-	echo "use kvm, 4, 5 para to start..."
+	echo "use kvm, 5, trunk para to start..."
 fi
