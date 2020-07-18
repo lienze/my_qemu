@@ -2,7 +2,7 @@
 if [ x$1 == x"kvm" ];then
 	qemu-system-x86_64 \
 		-s \
-		-kernel ../linux-5.4.52/arch/x86/boot/bzImage \
+		-kernel ../linux_5.4.52/arch/x86/boot/bzImage \
 		-initrd initramfs.cpio.gz \
 		-nographic \
 		-cpu host \
@@ -13,7 +13,7 @@ if [ x$1 == x"kvm" ];then
 elif [ x$1 == x"5" ];then
 	qemu-system-x86_64 \
 		-s \
-		-kernel ../linux-5.4.52/arch/x86/boot/bzImage \
+		-kernel ../linux_5.4.52/arch/x86/boot/bzImage \
 		-initrd initramfs.cpio.gz \
 		-nographic \
 		-cpu max \
