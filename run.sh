@@ -30,6 +30,16 @@ elif [ x$1 == x"trunk" ];then
 		-smp 2 \
 		-m 2048 \
 		-append "console=ttyS0"
+elif [ x$1 == x"debian" ];then
+	qemu-system-x86_64 \
+		-s \
+		-kernel ../debian/arch/x86/boot/bzImage \
+		-initrd initramfs.cpio.gz \
+		-nographic \
+		-cpu max \
+		-smp 2 \
+		-m 2048 \
+		-append "console=ttyS0"
 else
 	echo "use kvm, 5, trunk para to start..."
 fi
