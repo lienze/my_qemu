@@ -2,8 +2,8 @@
 if [ x$1 == x"kvm" ];then
 	qemu-system-x86_64 \
 		-s \
-		-kernel ../linux_5.4.52/arch/x86/boot/bzImage \
-		-initrd initramfs.cpio.gz \
+		-kernel ../ubuntu_src/arch/x86/boot/bzImage \
+		-initrd rootfs.cpio.gz \
 		-nographic \
 		-cpu host \
 		-enable-kvm \
@@ -14,7 +14,7 @@ elif [ x$1 == x"5" ];then
 	qemu-system-x86_64 \
 		-s \
 		-kernel ../linux_5.4.52/arch/x86/boot/bzImage \
-		-initrd initramfs.cpio.gz \
+		-initrd rootfs.cpio.gz \
 		-nographic \
 		-cpu max \
 		-smp 2 \
@@ -24,7 +24,7 @@ elif [ x$1 == x"trunk" ];then
 	qemu-system-x86_64 \
 		-s \
 		-kernel ../linux_trunk/arch/x86/boot/bzImage \
-		-initrd initramfs.cpio.gz \
+		-initrd rootfs.cpio.gz \
 		-nographic \
 		-cpu max \
 		-smp 2 \
@@ -34,7 +34,7 @@ elif [ x$1 == x"debian" ];then
 	qemu-system-x86_64 \
 		-s \
 		-kernel ../debian/arch/x86/boot/bzImage \
-		-initrd initramfs.cpio.gz \
+		-initrd rootfs.cpio.gz \
 		-nographic \
 		-cpu max \
 		-smp 2 \
