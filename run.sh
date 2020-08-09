@@ -1,6 +1,13 @@
 #!/bin/bash
+
+debug=''
+if [ x$2 == x"debug" ];then
+	debug='-S'
+fi
+
 if [ x$1 == x"kvm" ];then
 	qemu-system-x86_64 \
+		$debug \
 		-s \
 		-kernel ../ubuntu_src/arch/x86/boot/bzImage \
 		-initrd rootfs.cpio.gz \
@@ -12,6 +19,7 @@ if [ x$1 == x"kvm" ];then
 		-append "console=ttyS0"
 elif [ x$1 == x"5" ];then
 	qemu-system-x86_64 \
+		$debug \
 		-s \
 		-kernel ../linux_5.4.52/arch/x86/boot/bzImage \
 		-initrd rootfs.cpio.gz \
@@ -22,6 +30,7 @@ elif [ x$1 == x"5" ];then
 		-append "console=ttyS0"
 elif [ x$1 == x"trunk" ];then
 	qemu-system-x86_64 \
+		$debug \
 		-s \
 		-kernel ../linux_trunk/arch/x86/boot/bzImage \
 		-initrd rootfs.cpio.gz \
@@ -32,6 +41,7 @@ elif [ x$1 == x"trunk" ];then
 		-append "console=ttyS0"
 elif [ x$1 == x"debian" ];then
 	qemu-system-x86_64 \
+		$debug \
 		-s \
 		-kernel ../debian/arch/x86/boot/bzImage \
 		-initrd rootfs.cpio.gz \
