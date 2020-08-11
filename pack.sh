@@ -9,6 +9,10 @@ function delete_dir()
 	fi
 }
 
+delete_dir ./rootfs/lib/modules
+mkdir -p ./rootfs/lib/modules
+cp ../ubuntu_src/drivers/atfs/atfs.ko ./rootfs/lib/modules
+
 cd ./rootfs
 delete_dir ./dev
 mkdir ./dev
