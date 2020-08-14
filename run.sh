@@ -50,6 +50,18 @@ elif [ x$1 == x"debian" ];then
 		-smp 2 \
 		-m 2048 \
 		-append "console=ttyS0"
+elif [ x$1 == x"disk" ];then
+	qemu-system-x86_64 \
+		$debug \
+		-s \
+		-kernel ../ubuntu_src/arch/x86/boot/bzImage \
+		-drive format=raw,file=./disk.raw \
+		-nographic \
+		-cpu max \
+		-smp 2 \
+		-m 2048 \
+		-hdb ./hd \
+		-append "console=ttyS0 init=/linuxrc root=/dev/sda rw"
 else
 	echo "use kvm, 5, trunk para to start..."
 fi
