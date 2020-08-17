@@ -49,6 +49,7 @@ elif [ x$1 == x"debian" ];then
 		-cpu max \
 		-smp 2 \
 		-m 2048 \
+		-hda ./hd \
 		-append "console=ttyS0"
 elif [ x$1 == x"disk" ];then
 	qemu-system-x86_64 \
