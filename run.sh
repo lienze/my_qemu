@@ -52,6 +52,7 @@ elif [ x$1 == x"debian" ];then
 		-hda ./hd \
 		-append "console=ttyS0"
 elif [ x$1 == x"disk" ];then
+	sudo umount img
 	qemu-system-x86_64 \
 		$debug \
 		-s \
