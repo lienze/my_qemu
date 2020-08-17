@@ -55,7 +55,7 @@ elif [ x$1 == x"disk" ];then
 	qemu-system-x86_64 \
 		$debug \
 		-s \
-		-kernel ../ubuntu_src/arch/x86/boot/bzImage \
+		-kernel ../kernel_src/arch/x86/boot/bzImage \
 		-drive format=raw,file=./disk.raw \
 		-nographic \
 		-cpu max \
